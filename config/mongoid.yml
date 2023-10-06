@@ -9,8 +9,8 @@ development:
       # Otherwise define the parameters separately.
       # This defines the name of the default database that Mongoid can connect to.
       # (required).
-      uri: mongodb+srv://kgarcia09:8aERtWKLLOXqNP00@cluster0.o7vlxq6.mongodb.net/
+      uri: mongodb+srv://kgarcia09:eJUOQP9B07C7EbsG@cluster0.o7vlxq6.mongodb.net/recipes?
 
-      options:
-        server_selection_timeout: 5
+
+
 

@@ -44,6 +44,9 @@ gem "bootsnap", require: false
 
 # Install mongodb
 gem 'mongoid'
+gem 'rack-cors'
+
+gem 'mongo'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
