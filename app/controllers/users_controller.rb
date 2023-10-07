@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
+    puts "Made it to index"
   end
 
   # GET /users/1 or /users/1.json
@@ -15,6 +16,18 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
 
+  end
+
+  # POST /users/login
+  def login
+    puts "Trying to login"
+    @user = User.new(user_params)
+    puts @user.username
+    @search = User.where(name: params[:username], password: params[:password])
+    puts @search.name
+    if (@search != nil)
+        redirect_to recipes_url
+    end
   end
 
   # GET /users/1/edit
