@@ -1,16 +1,9 @@
 development:
-  # Configure available database clients. (required)
   clients:
-    # Defines the default client. (required)
     default:
-      # Mongoid can connect to a URI accepted by the driver:
-      # uri: mongodb://user:password@mongodb.domain.com:27017/csc372_project1_development
-
-      # Otherwise define the parameters separately.
-      # This defines the name of the default database that Mongoid can connect to.
-      # (required).
-      uri: mongodb+srv://kgarcia09:eJUOQP9B07C7EbsG@cluster0.o7vlxq6.mongodb.net/recipes?
-
+      uri: mongodb+srv://hfinkbeiner:RoaLYJiwHnlPmyZK@cluster0.7cj1wbw.mongodb.net/cluster0?retryWrites=true&w=majority
+      options:
+        server_selection_timeout: 5
 
 
 
