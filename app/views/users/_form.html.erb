@@ -11,32 +11,23 @@
     </div>
   <% end %>
 
-  <div>
+
+  <p>
     <%= form.label :username, style: "display: block" %>
-    <%= form.text_field :username %>
-  </div>
+    <%= form.text_field :username %><br>
+  </p>
 
-  <div>
+  <p>
     <%= form.label :password, style: "display: block" %>
-    <%= form.text_field :password %>
-  </div>
+    <%= form.password_field :password %><br>
+  </p>
 
-  <div>
-    <%= form.label :profilePicture, style: "display: block" %>
-    <%= form.text_field :profilePicture %>
-  </div>
+  <p>
+    <%= form.label :Profile_Picture, style: "display: block" %>
+    <%= form.file_field :profilePicture %>
+  </p>
 
-  <div>
-    <%= form.label :likedRecipes, style: "display: block" %>
-    <%= form.text_field :likedRecipes %>
-  </div>
-
-  <div>
-    <%= form.label :createdRecipes, style: "display: block" %>
-    <%= form.text_field :createdRecipes %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  <p>
+    <br><%= form.submit %>
+  </p>
 <% end %>
