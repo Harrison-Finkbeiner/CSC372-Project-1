@@ -1,7 +1,7 @@
 development:
   clients:
     default:
-      uri: mongodb+srv://hfinkbeiner:RoaLYJiwHnlPmyZK@cluster0.7cj1wbw.mongodb.net/Cluster0?retryWrites=true&w=majority
+      uri: mongodb+srv://hfinkbeiner:RoaLYJiwHnlPmyZK@cluster0.7cj1wbw.mongodb.net/cluster0?retryWrites=true&w=majority
       options:
         server_selection_timeout: 5
 

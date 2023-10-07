@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
- # has_one_attached :profilePicture
+  has_one_attached :profilePicture
 
   # GET /users or /users.json
   def index

@@ -21,7 +21,7 @@
 
   <div>
     <%= form.label :profilePicture, style: "display: block" %>
-    <%= form.file_field :profilePicture %>
+    <%= form.text_field :profilePicture %>
   </div>
 
   <div>
