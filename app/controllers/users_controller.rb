@@ -25,6 +25,10 @@ class UsersController < ApplicationController
                            :password => @user.password)
     if (@search != nil)
         redirect_to recipes_url
+    else
+      puts "Invalid login provided."
+      flash.notice = "Invalid login."
+      redirect_to users_url
     end
   end
 
@@ -38,8 +42,15 @@ class UsersController < ApplicationController
     @search = User.find_by(:username => user_params[:username],
                            :password => user_params[:password])
     if (@search == nil)
-        @user = User.new(user_params)
-
+        @user = User.new
+        @user.username =  user_params[:username]
+        @user.password = user_params[:password]
+        @pic = user_params[:profilePicture]
+        puts user_params
+        File.open(Rails.root.join("public","images", @pic.original_filename), 'wb') do |file|
+          file.write(@pic.read)
+        end
+        @user.profilePicture = (user_params[:profilePicture])
         @user.save
         redirect_to users_url #recipes_path
     end
