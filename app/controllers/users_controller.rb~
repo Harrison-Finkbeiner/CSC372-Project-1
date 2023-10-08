@@ -20,11 +20,9 @@ class UsersController < ApplicationController
 
   # POST /users/login
   def login
-    puts "Trying to login"
     @user = User.new(user_params)
-    puts @user.username
-    @search = User.where(name: params[:username], password: params[:password])
-    puts @search.name
+    @search = User.find_by(:username => @user.username,
+                           :password => @user.password)
     if (@search != nil)
         redirect_to recipes_url
     end
