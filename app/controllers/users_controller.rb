@@ -34,10 +34,16 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-    @user = User.new(user_params)
 
-    @user.save
-    redirect_to users_url #recipes_path
+    @search = User.find_by(:username => user_params[:username],
+                           :password => user_params[:password])
+    if (@search == nil)
+        @user = User.new(user_params)
+
+        @user.save
+        redirect_to users_url #recipes_path
+    end
+
   end
 
   private def user_params
