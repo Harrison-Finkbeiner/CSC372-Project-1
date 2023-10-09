@@ -47,16 +47,21 @@ class UsersController < ApplicationController
 
 
         if (@pic != nil)
-        File.open(Rails.root.join("public","images", @pic.original_filename), 'wb') do |file|
-          file.write(@pic.read)
-        end
-        @user.profilePicture = (params[:user][:profilePicture].original_filename)
-        else
+          File.open(Rails.root.join("public","images", @pic.original_filename), 'wb') do |file|
+            file.write(@pic.read)
+          end
+          @user.profilePicture = (params[:user][:profilePicture].original_filename)
+          else
           @user.profilePicture = "public/images/defaultPfp.png"
         end
         @user.save
         redirect_to users_url #recipes_path
+    else
+      flash.notice = "Username is taken."
+      redirect_to users_url
+
     end
+
 
   end
 

@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    puts "Made it to index"
   end
 
   # GET /users/1 or /users/1.json
@@ -26,7 +25,6 @@ class UsersController < ApplicationController
     if (@search != nil)
         redirect_to recipes_url
     else
-      puts "Invalid login provided."
       flash.notice = "Invalid login."
       redirect_to users_url
     end
@@ -49,17 +47,21 @@ class UsersController < ApplicationController
 
 
         if (@pic != nil)
-        File.open(Rails.root.join("public","images", @pic.original_filename), 'wb') do |file|
-          file.write(@pic.read)
-        end
-        @user.profilePicture = (params[:user][:profilePicture].original_filename)
-        else
+          File.open(Rails.root.join("public","images", @pic.original_filename), 'wb') do |file|
+            file.write(@pic.read)
+          end
+          @user.profilePicture = (params[:user][:profilePicture].original_filename)
+          else
           @user.profilePicture = "public/images/defaultPfp.png"
         end
         @user.save
-        puts @user.profilePicture
         redirect_to users_url #recipes_path
+    else
+      flash.notice = "Username is taken."
+      redirect_to users_url
+
     end
+
 
   end
 
