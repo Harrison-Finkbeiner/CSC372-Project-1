@@ -138,6 +138,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.4-x86-mingw32)
       racc (~> 1.4)
+    nokogiri (1.15.4-x86_64-darwin)
+      racc (~> 1.4)
     psych (5.0.1)
       stringio
     public_suffix (5.0.3)
@@ -226,6 +228,7 @@ GEM
 PLATFORMS
   x64-mingw-ucrt
   x86-mingw32
+  x86_64-darwin-21
 
 DEPENDENCIES
   bootsnap

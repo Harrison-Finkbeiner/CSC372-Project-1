@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 
   get 'recipes/index'
 
+
   post 'users/new'
 
-  root 'recipes#index'
+  root 'users#index'
+  #root 'recipes#index'
 
 end

@@ -11,6 +11,7 @@ development:
       # (required).
       uri: mongodb+srv://kgarcia09:eJUOQP9B07C7EbsG@cluster0.o7vlxq6.mongodb.net/cookbookDB?
 
-
+  options: #strictly 2 spaces before
+    raise_not_found_error: false
 
 
