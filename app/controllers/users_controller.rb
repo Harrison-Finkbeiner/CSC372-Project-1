@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    puts "Made it to index"
   end
 
   # GET /users/1 or /users/1.json
@@ -26,7 +25,6 @@ class UsersController < ApplicationController
     if (@search != nil)
         redirect_to recipes_url
     else
-      puts "Invalid login provided."
       flash.notice = "Invalid login."
       redirect_to users_url
     end
@@ -45,12 +43,17 @@ class UsersController < ApplicationController
         @user = User.new
         @user.username =  user_params[:username]
         @user.password = user_params[:password]
-        @pic = user_params[:profilePicture]
-        puts user_params
+        @pic = params[:user][:profilePicture]
+
+
+        if (@pic != nil)
         File.open(Rails.root.join("public","images", @pic.original_filename), 'wb') do |file|
           file.write(@pic.read)
         end
-        @user.profilePicture = (user_params[:profilePicture])
+        @user.profilePicture = (params[:user][:profilePicture].original_filename)
+        else
+          @user.profilePicture = "public/images/defaultPfp.png"
+        end
         @user.save
         redirect_to users_url #recipes_path
     end
@@ -58,7 +61,7 @@ class UsersController < ApplicationController
   end
 
   private def user_params
-    params.require(:require).permit(:username, :password)
+    params.require(:require).permit(:username, :password, :profilePicture)
   end
 
   # PATCH/PUT /users/1 or /users/1.json
