@@ -4,4 +4,7 @@ class Recipe
   field :name, type: String
   field :ingredients, type: String
   field :steps, type: String
+
+
+
 end
