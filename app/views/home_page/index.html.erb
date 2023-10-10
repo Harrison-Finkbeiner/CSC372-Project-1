@@ -1,3 +1,6 @@
+<!--This file is the home page file. It has all of the style declarations for how the recipes
+    are displayed. In addition, it sets the definition for the header that is shown.-->
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,22 +70,19 @@
     }
     </style>
 </head>
+
 <body>
   <div class="top-bar">
+    <!--Shows the user icon in top left-->
     <%= link_to(image_tag("R.png", size: "40x40", :alt => "search-icon"), home_page_index_path) %>
         <form class="form-inline my-2 my-lg-0" action="/search">
            <input class="form-control mr-sm-2" name="q" type = "text" placeholder="Search" ari-label="Search">
         </form>
-        
-  <% if false %>
-    <div class="account-button">
-       <ul class="nav navbar-nav">
-          <li><%= link_to "My Account", show_user_path %></li>
-       </ul>
-    </div>  
-  <% end %>
+
 
     <div class="recipe-button">
+      <!--Shows the two links in top right.
+          The first link takes you to the signin. The second one takes you to create a new recipe.-->
        <ul class="nav navbar-nav">
          <li><%= link_to "Sign In/Create Account", users_login_path  %></li>
          <li><%= link_to "Create Recipe", new_recipe_path %></li>

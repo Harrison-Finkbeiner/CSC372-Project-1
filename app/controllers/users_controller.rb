@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :set_user, only: %i[ edit update destroy ]
   skip_before_action :verify_authenticity_token
 
 
@@ -20,9 +20,8 @@ class UsersController < ApplicationController
   # POST /users/login
   def login
     @user = User.new(user_params)
-    @search = User.find_by(:username => @user.username,
-                           :password => @user.password)
-    if (@search != nil)
+
+    if User.exists("username": @user.username, "password": @user.password)
         print "\n\n\n\n\nSIGNED IN!!!\n\n\n\n\n"
         redirect_to home_page_index_path
     else
@@ -38,8 +37,8 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     puts "Created a user"
-    @search = User.find_by(:username => user_params[:username])
-    if (@search == nil)
+
+    if !User.exists?("username": user_params[:username])
         @user = User.new
         @user.username =  user_params[:username]
         @user.password = user_params[:password]
