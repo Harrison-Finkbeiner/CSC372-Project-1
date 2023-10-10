@@ -1,2 +1,7 @@
 <h1>Search Results</h1>
-<%= render @recipes %>
+<% @recipes.each do |recipe| %>
+      <h3>Recipe: <%= link_to recipe.name, recipe %></h3>
+      <h3>Ingredients: <%= recipe.ingredients %></h3>
+      <h3>Steps: <%= recipe.steps %></h2>
+      <h3><%= time_ago_in_words(recipe.created_at) %> ago</h3>
+    <% end %>
