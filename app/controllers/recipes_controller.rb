@@ -61,6 +61,10 @@ class RecipesController < ApplicationController
     end
   end
 
+  def search
+      @recipes = Recipe.any_of({name: /#{params[:q]}/i}, {ingredients: /#{params[:q]}/i})
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
@@ -71,4 +75,8 @@ class RecipesController < ApplicationController
     def recipe_params
       params.require(:recipe).permit(:name, :ingredients, :steps)
     end
+
+    
 end
+
+

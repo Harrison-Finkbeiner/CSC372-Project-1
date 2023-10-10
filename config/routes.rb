@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :users
+  root 'home_page#index'
+  resources :home_page
   resources :recipes
 
   get 'recipes/index'
@@ -9,7 +11,8 @@ Rails.application.routes.draw do
   get 'users/login'
   post 'users/login'
 
-  #root 'users#index'
-  root 'recipes#index'
+  get 'search', to:"recipes#search"
+  resources :recipes do
+  end
 
 end
