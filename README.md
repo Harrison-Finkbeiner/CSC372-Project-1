@@ -8,6 +8,10 @@ run the command
 
 bundle install
 
+start the server with bin/rails s
+
+then go the address localhost:3000 in a browser
+
 
 This program is a web application that allow users to create an account and sign in. On the site they are able to add new recipes and view recipes created by other users. We tested this program by adding test
 data to the database to ensure only a unique username can be entered. We also tested the sign in functionality by trying to login in with invalid credentials. The site has alerts for the user to share this 
