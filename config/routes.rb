@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   end
 
   get 'search', to:"recipes#search"
-  resources :recipes do
-  end
+
 
 end

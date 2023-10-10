@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def login
     @user = User.new(user_params)
 
-    if User.exists("username": @user.username, "password": @user.password)
+    if User.exists?("username": @user.username, "password": @user.password)
         print "\n\n\n\n\nSIGNED IN!!!\n\n\n\n\n"
         redirect_to home_page_index_path
     else
