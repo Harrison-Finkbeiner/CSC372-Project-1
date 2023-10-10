@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     @search = User.find_by(:username => @user.username,
                            :password => @user.password)
     if (@search != nil)
+        print "\n\n\n\n\nSIGNED IN!!!\n\n\n\n\n"
         redirect_to recipes_url
     else
       flash.notice = "Invalid login."

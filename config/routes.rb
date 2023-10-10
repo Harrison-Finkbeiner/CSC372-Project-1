@@ -6,8 +6,10 @@ Rails.application.routes.draw do
 
 
   post 'users/new'
+  get 'users/login'
+  post 'users/login'
 
-  root 'users#index'
-  #root 'recipes#index'
+  #root 'users#index'
+  root 'recipes#index'
 
 end
