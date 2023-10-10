@@ -37,9 +37,8 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-
-    @search = User.find_by(:username => user_params[:username],
-                           :password => user_params[:password])
+    puts "Created a user"
+    @search = User.find_by(:username => user_params[:username])
     if (@search == nil)
         @user = User.new
         @user.username =  user_params[:username]
@@ -56,10 +55,10 @@ class UsersController < ApplicationController
           @user.profilePicture = "public/images/defaultPfp.png"
         end
         @user.save
-        redirect_to users_url #recipes_path
+        redirect_to users_login_path #recipes_path
     else
       flash.notice = "Username is taken."
-      redirect_to users_url
+      redirect_to new_user_path
 
     end
 
