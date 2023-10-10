@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version:
+ruby 3.2.2
+rails 7.0.8
 
-Things you may want to cover:
+run the command
 
-* Ruby version
+bundle install
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This program is a web application that allow users to create an account and sign in. On the site they are able to add new recipes and view recipes created by other users. We tested this program by adding test
+data to the database to ensure only a unique username can be entered. We also tested the sign in functionality by trying to login in with invalid credentials. The site has alerts for the user to share this 
+information with them.
