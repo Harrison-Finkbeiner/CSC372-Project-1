@@ -31,7 +31,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
 
     @recipe.save
-    redirect_to @recipe
+    redirect_to "/home_page"
   end
 
   private def recipe_params
