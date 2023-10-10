@@ -10,12 +10,8 @@ Rails.application.routes.draw do
   post 'users/new'
  
   post 'users/login', to:"users#login"
-  resources :users do
-  end
-  
-  get 'users/login', to:"users#login"
-  resources :users do
-  end
+
+
 
   get 'search', to:"recipes#search"
 

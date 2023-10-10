@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         redirect_to home_page_index_path
     else
       flash.notice = "Invalid login."
-      redirect_to users_url
+      redirect_to users_login_path
     end
   end
 
