@@ -12,5 +12,5 @@ development:
       uri: mongodb+srv://kgarcia09:eJUOQP9B07C7EbsG@cluster0.o7vlxq6.mongodb.net/cookbookDB?
 
 
-  options:
-    raise_not_found_error: false
+    options:
+      raise_not_found_error: false
